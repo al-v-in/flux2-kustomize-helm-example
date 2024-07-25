@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: nginx
+  namespace: podinfo
+spec:
+  releaseName: mynginx
+  chart:
+    spec:
+      chart: .
+      sourceRef:
+        kind: GitRepository
+        name: generic-helm-chart
+  interval: 50m
+  install:
+    remediation:
+      retries: 3
