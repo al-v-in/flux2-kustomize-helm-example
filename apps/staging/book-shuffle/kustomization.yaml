@@ -3,3 +3,7 @@ kind: Kustomization
 resources:
   - ../../base/generic-helm-chart
   - ../../base/book-shuffle
+patches:
+  - path: release.yaml
+    target:
+      kind: HelmRelease

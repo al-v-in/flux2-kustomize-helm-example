@@ -16,14 +16,3 @@ spec:
   install:
     remediation:
       retries: 3
-  values:
-    ingress:
-      enabled: true
-      className: nginx
-      annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /$2
-      hosts:
-      - host: alvin.local
-        paths:
-        - path: /books(/|$)(.*)
-          pathType: ImplementationSpecific
