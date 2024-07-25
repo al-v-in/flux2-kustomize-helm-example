@@ -4,7 +4,7 @@ namespace: podinfo
 resources:
   - ../base/podinfo
   - ../base/generic-helm-chart
-patches:
-  - path: podinfo-values.yaml
-    target:
-      kind: HelmRelease
+#patches:
+#  - path: podinfo-values.yaml
+#    target:
+#      kind: HelmRelease
