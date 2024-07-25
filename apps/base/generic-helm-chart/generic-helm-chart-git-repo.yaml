@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
     name: generic-helm-chart
-    namespace: default
+    namespace: common
 spec:
     interval: 5m
     url: https://github.com/al-v-in/generic-helm-chart
