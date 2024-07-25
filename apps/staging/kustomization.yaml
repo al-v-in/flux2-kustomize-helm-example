@@ -4,6 +4,7 @@ namespace: podinfo
 resources:
   - ../base/podinfo
   - ../base/generic-helm-chart
+  - ../base/book-shuffle
 #patches:
 #  - path: podinfo-values.yaml
 #    target:
