@@ -1,4 +1,4 @@
 creation_rules:
-  - path_regex: .*.yaml
+  - path_regex: .*staging/*.enc.yaml
     encrypted_regex: ^(data|stringData)$
     pgp: 50A503DBAE542B1B86C935F2094013E8E9B735E5
