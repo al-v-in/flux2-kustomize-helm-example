@@ -11,6 +11,8 @@ spec:
     enable: false
   values:
     ingress:
+      annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /$2
       hosts:
         - host: alvin.local
           paths:
