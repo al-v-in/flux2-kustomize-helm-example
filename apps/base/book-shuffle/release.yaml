@@ -16,3 +16,8 @@ spec:
   install:
     remediation:
       retries: 3
+  values:
+    image:
+      repository: ghcr.io/al-v-in/book-shuffle
+      pullPolicy: Always
+      tag: main
