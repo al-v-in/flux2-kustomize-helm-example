@@ -22,8 +22,8 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: "metallb/metallb"
-      version: "6.x"
+      chart: metallb
+      version: "*"
       sourceRef:
         kind: HelmRepository
         name: metallb
