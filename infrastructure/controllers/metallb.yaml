@@ -22,7 +22,7 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: metallb/metallb
+      chart: metallb
       version: "6.x"
       sourceRef:
         kind: HelmRepository
