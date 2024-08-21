@@ -1,8 +1,8 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
 metadata:
-  name: book-shuffle
-  namespace: book-shuffle
+  name: flux-system
+  namespace: flux-system
 spec:
   git:
     checkout:
@@ -20,7 +20,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-    namespace: flux-system
   update:
     path: ./apps/base/book-shuffle/
     strategy: Setters
