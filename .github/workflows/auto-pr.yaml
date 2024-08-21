@@ -14,7 +14,11 @@ jobs:
     - uses: actions/checkout@v3
       name: checkout
 
-    - name: pull-request
-      run: |
-        gh_pr_up() { gh pr create $* || gh pr edit $* }
-        gh_pr_up --title "Flux image update" --body "Automated PR"
+    - uses: repo-sync/pull-request@v2
+      name: pull-request
+      with:
+        destination_branch: "main"
+        pr_title: "Flux auto image update"
+        pr_body: ":crown: *An automated PR*"
+        pr_draft: false
+        github_token: ${{ secrets.GITHUB_TOKEN }}
