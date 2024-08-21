@@ -1,0 +1,16 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: book-shuffle
+  namespace: book-shuffle
+spec:
+  imageRepositoryRef:
+    name: book-shuffle
+  policy:
+    # for ${GIT_BRANCH}-${GIT_SHA:0:7}-$(date +%s)
+    filterTags:
+      pattern: '^main-[a-fA-F0-9]+-(?P<ts>.*)'
+      extract: '$ts'
+    policy:
+      numerical:
+        order: asc

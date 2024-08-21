@@ -1,0 +1,10 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: book-shuffle
+  namespace: book-shuffle
+spec:
+  image: ghcr.io/al-v-in/book-shuffle
+  interval: 5m
+  secretRef:
+    name: github-cr-secret

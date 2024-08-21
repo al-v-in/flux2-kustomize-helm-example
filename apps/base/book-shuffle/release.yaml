@@ -19,7 +19,6 @@ spec:
   values:
     image:
       repository: ghcr.io/al-v-in/book-shuffle
-      pullPolicy: Always
-      tag: main
+      tag: main # {"$imagepolicy": "book-shuffle:book-shuffle:tag"}
     imagePullSecrets: 
     - name: github-cr-secret
