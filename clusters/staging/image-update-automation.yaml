@@ -16,8 +16,6 @@ spec:
         name: fluxcdbot
       messageTemplate: '{{range .Changed.Changes}}{{print .OldValue}} -> {{println
         .NewValue}}{{end}}'
-    push:
-      branch: main
   interval: 30m0s
   sourceRef:
     kind: GitRepository
