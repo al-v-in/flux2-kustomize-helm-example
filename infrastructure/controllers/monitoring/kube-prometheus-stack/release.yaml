@@ -35,13 +35,13 @@ spec:
     alertmanager:
       config:
         global:
-          resolve_timeout: 11m
-        receivers:
-        - name: webhook
-          webhook_configs:
-          - url: "https://webhook.site/0d65b86a-edcc-4394-b6d4-a3201fad4420"
-        route:
-          receiver: webhook
+          resolve_timeout: 12m
+#        receivers:
+#        - name: webhook
+#          webhook_configs:
+#          - url: "https://webhook.site/0d65b86a-edcc-4394-b6d4-a3201fad4420"
+#        route:
+#          receiver: webhook
       enabled: true
       ingress:
         enabled: true
