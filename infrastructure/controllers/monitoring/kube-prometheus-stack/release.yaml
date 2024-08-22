@@ -27,9 +27,9 @@ spec:
         hosts:
           - alerts.local
       config:
-        global:
-          resolve_timeout: 5m
-          pagerduty_url: https://events.eu.pagerduty.com/generic/2010-04-15/create_event.json
+#        global:
+#          resolve_timeout: 5m
+#          pagerduty_url: https://events.eu.pagerduty.com/generic/2010-04-15/create_event.json
         receivers:
           - name: pagerduty-service-prometheus-test
             pagerduty_configs:
