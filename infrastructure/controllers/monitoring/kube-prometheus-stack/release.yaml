@@ -20,6 +20,18 @@ spec:
     crds: CreateReplace
   # https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
   values:
+    additionalPrometheusRulesMap:
+      rule-name:
+        groups:
+        - name: test-alerts
+          rules:
+          - alert: TestAlert
+            expr: vector(1)
+            for: 1m
+            labels:
+              severity: critical
+            annotations:
+              summary: "This is a test alert"
     alertmanager:
       enabled: true
       ingress:
