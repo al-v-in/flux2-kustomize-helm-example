@@ -21,7 +21,11 @@ spec:
   # https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
   values:
     alertmanager:
-      enabled: false
+      enabled: true
+      ingress:
+        enabled: true
+        hosts:
+          - alerts.local
     grafana:
       ingress:
         enabled: true
