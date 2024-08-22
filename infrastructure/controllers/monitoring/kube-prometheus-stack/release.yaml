@@ -26,6 +26,17 @@ spec:
         enabled: true
         hosts:
           - alerts.local
+      config:
+        global:
+          resolve_timeout: 5m
+          pagerduty_url: https://events.eu.pagerduty.com/generic/2010-04-15/create_event.json
+        receivers:
+          - name: pagerduty-service-prometheus-test
+            pagerduty_configs:
+            - service_key: 5b3cc67fff294d0fd1a08d85c3a00aed
+        route:
+          group_by: [cluster]
+          receiver: pagerduty-service-prometheus-test
     grafana:
       ingress:
         enabled: true
