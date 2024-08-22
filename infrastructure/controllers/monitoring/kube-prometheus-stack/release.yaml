@@ -37,6 +37,7 @@ spec:
         global:
           resolve_timeout: 13m
         route:
+          receiver: gary
           group_interval: 6m
 #        receivers:
 #        - name: webhook
