@@ -34,9 +34,13 @@ spec:
           - name: pagerduty-service-prometheus-test
             pagerduty_configs:
             - service_key: R03E5FXGHY52UNTGBOZI79AUUPMO832S
+          - name: webhook-test
+            webhook_configs:
+            - url: https://webhook.site/0d65b86a-edcc-4394-b6d4-a3201fad4420
         route:
           group_by: [cluster]
-          receiver: pagerduty-service-prometheus-test
+#          receiver: pagerduty-service-prometheus-test
+          receiver: webhook-test
     grafana:
       ingress:
         enabled: true
