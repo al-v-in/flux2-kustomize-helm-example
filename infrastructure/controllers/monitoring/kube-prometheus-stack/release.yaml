@@ -35,10 +35,15 @@ spec:
     alertmanager:
       config:
         global:
-          resolve_timeout: 16m
+          resolve_timeout: 17m
         route:
           receiver: "foo"
-          group_interval: 9m
+          group_interval: 10m
+          routes:
+          - receiver: "foo"
+            matchers:
+            - alertname="Watchdog"
+            continue: false
         receivers:
         - name: "foo"
 #        receivers:
