@@ -34,6 +34,7 @@ spec:
               summary: "This is a test alert"
     defaultRules:
       rules:
+        # in k3s these are combined in to one binary so cant monitor
         kubeProxy: false
         kubeControllerManager: false
         kubeSchedulerAlerting: false
@@ -41,49 +42,24 @@ spec:
     alertmanager:
       config:
         global:
-          resolve_timeout: 20m
           pagerduty_url: "https://events.eu.pagerduty.com/v2/enqueue"
         route:
-          receiver: foo
-          group_interval: 12m
+          receiver: pagerduty
           group_by: [cluster, alertname]
           routes:
-          - receiver: foo
+          - receiver: pagerduty
             matchers:
             - alertname="Watchdog"
             continue: false
         receivers:
-        - name: foo
+        - name: pagerduty
           pagerduty_configs:
           - service_key: R03E5FXGHY52UNTGBOZI79AUUPMO832S
-#          webhook_configs:
-#          - url: "https://webhook.site/0d65b86a-edcc-4394-b6d4-a3201fad4420"
-#        receivers:
-#        - name: webhook
-#          webhook_configs:
-#          - url: "https://webhook.site/0d65b86a-edcc-4394-b6d4-a3201fad4420"
-#        route:
-#          receiver: webhook
       enabled: true
       ingress:
         enabled: true
         hosts:
           - alerts.local
-#      config:
-#        global:
-#          resolve_timeout: 1m
-#          pagerduty_url: "https://events.eu.pagerduty.com/v2/enqueue"
-#        receivers:
-#          - name: pagerduty-service-prometheus-test
-#            pagerduty_configs:
-#            - service_key: R03E5FXGHY52UNTGBOZI79AUUPMO832S
-#          - name: webhook-test
-#            webhook_configs:
-#            - url: https://webhook.site/0d65b86a-edcc-4394-b6d4-a3201fad4420
-#        route:
-#          group_by: [cluster]
-##          receiver: pagerduty-service-prometheus-test
-#          receiver: webhook-test
     grafana:
       ingress:
         enabled: true
