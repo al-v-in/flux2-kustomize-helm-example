@@ -61,27 +61,18 @@ spec:
         ingressClassName: nginx
         hosts:
         - alerts.devhome.ioab.io
-        paths:
-        - path: /
-          pathType: ImplementationSpecific
     grafana:
       ingress:
         enabled: true
         ingressClassName: nginx
         hosts:
         - grafana.devhome.ioab.io
-        paths:
-        - path: /
-          pathType: ImplementationSpecific
     prometheus:
       ingress:
         enabled: true
         ingressClassName: nginx
         hosts:
         - prometheus.devhome.ioab.io
-        paths:
-        - path: /
-          pathType: ImplementationSpecific
       prometheusSpec:
         retention: 24h
         resources:
