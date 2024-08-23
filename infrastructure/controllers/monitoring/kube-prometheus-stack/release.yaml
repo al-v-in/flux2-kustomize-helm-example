@@ -35,10 +35,11 @@ spec:
     alertmanager:
       config:
         global:
-          resolve_timeout: 18m
+          resolve_timeout: 19m
+          pagerduty_url: "https://events.eu.pagerduty.com/v2/enqueue"
         route:
           receiver: "foo"
-          group_interval: 11m
+          group_interval: 12m
           routes:
           - receiver: "foo"
             matchers:
@@ -46,8 +47,10 @@ spec:
             continue: false
         receivers:
         - name: "foo"
-          webhook_configs:
-          - url: "https://webhook.site/0d65b86a-edcc-4394-b6d4-a3201fad4420"
+          pagerduty_configs:
+          - service_key: R03E5FXGHY52UNTGBOZI79AUUPMO832S
+#          webhook_configs:
+#          - url: "https://webhook.site/0d65b86a-edcc-4394-b6d4-a3201fad4420"
 #        receivers:
 #        - name: webhook
 #          webhook_configs:
