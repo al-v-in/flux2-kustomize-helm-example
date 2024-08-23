@@ -13,13 +13,8 @@ spec:
     ingress:
       enabled: true
       className: nginx
-      annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /$2
-        nginx.ingress.kubernetes.io/configuration-snippet: |
-          sub_filter_once on;
-          sub_filter '<base href="/"' '<base href="/books/"';
       hosts:
-      - host: alvin.local
+      - host: books.devhome.ioab.io
         paths:
-        - path: /books(/|$)(.*)
+        - path: /
           pathType: ImplementationSpecific
