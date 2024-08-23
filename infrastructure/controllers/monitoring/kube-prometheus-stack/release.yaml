@@ -32,6 +32,12 @@ spec:
               severity: critical
             annotations:
               summary: "This is a test alert"
+    defaultRules:
+      rules:
+        kubeProxy: false
+        kubeControllerManager: false
+        kubeSchedulerAlerting: false
+        kubeSchedulerRecording: false
     alertmanager:
       config:
         global:
