@@ -35,12 +35,12 @@ spec:
     alertmanager:
       config:
         global:
-          resolve_timeout: 15m
+          resolve_timeout: 16m
         route:
-          receiver: foo
-          group_interval: 8m
+          receiver: "foo"
+          group_interval: 9m
         receivers:
-        - name: foo
+        - name: "foo"
 #        receivers:
 #        - name: webhook
 #          webhook_configs:
