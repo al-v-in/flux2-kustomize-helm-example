@@ -19,6 +19,6 @@ spec:
   values:
     image:
       repository: ghcr.io/al-v-in/book-shuffle
-      tag: main-9c5dcc58-1726241852 # {"$imagepolicy": "book-shuffle:book-shuffle:tag"}
+      tag: main-9c5dcc58-1726414568 # {"$imagepolicy": "book-shuffle:book-shuffle:tag"}
     imagePullSecrets:
     - name: github-cr-secret
